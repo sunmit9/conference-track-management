@@ -1,4 +1,4 @@
-package com.conference.management.bo;
+package main.java.com.conference.management.bo;
 
 import java.util.ArrayList;
 import java.util.List;

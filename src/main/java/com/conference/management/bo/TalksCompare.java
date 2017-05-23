@@ -1,6 +1,4 @@
-package com.conference.management.bo;
-
-import com.conference.management.bo.Talk;
+package main.java.com.conference.management.bo;
 
 import java.util.Comparator;
 

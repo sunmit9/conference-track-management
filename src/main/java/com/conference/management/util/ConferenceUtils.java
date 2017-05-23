@@ -1,9 +1,8 @@
-package com.conference.management.util;
+package main.java.com.conference.management.util;
 
-import com.conference.management.bo.Talk;
+import main.java.com.conference.management.bo.Talk;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 /**

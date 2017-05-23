@@ -1,4 +1,4 @@
-package com.conference.management.enums;
+package main.java.com.conference.management.enums;
 
 /**
  * Created by girmes on 22/05/17.

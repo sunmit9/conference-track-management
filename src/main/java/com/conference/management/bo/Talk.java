@@ -1,8 +1,4 @@
-package com.conference.management.bo;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
-import java.util.Calendar;
+package main.java.com.conference.management.bo;
 
 /**
  * Created by girmes on 22/05/17.

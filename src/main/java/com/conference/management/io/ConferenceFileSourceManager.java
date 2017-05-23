@@ -1,7 +1,7 @@
-package com.conference.management.io;
+package main.java.com.conference.management.io;
 
-import com.conference.management.ConferenceManagementConfig;
-import com.conference.management.bo.Talk;
+import main.java.com.conference.management.ConferenceManagementConfig;
+import main.java.com.conference.management.bo.Talk;
 
 import java.io.*;
 import java.util.ArrayList;

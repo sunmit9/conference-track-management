@@ -1,7 +1,9 @@
-package com.conference.management.io;
+package main.java.com.conference.management.io;
 
-import com.conference.management.ConferenceManagementConfig;
-import com.conference.management.bo.*;
+import main.java.com.conference.management.ConferenceManagementConfig;
+import main.java.com.conference.management.bo.*;
+import main.java.com.conference.management.bo.Event;
+import main.java.com.conference.management.bo.Track;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

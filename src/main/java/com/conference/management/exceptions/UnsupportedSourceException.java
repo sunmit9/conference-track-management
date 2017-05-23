@@ -1,4 +1,4 @@
-package com.conference.management.exceptions;
+package main.java.com.conference.management.exceptions;
 
 /**
  * Created by girmes on 22/05/17.

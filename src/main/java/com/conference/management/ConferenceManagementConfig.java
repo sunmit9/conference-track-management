@@ -1,6 +1,6 @@
-package com.conference.management;
+package main.java.com.conference.management;
 
-import com.conference.management.util.ConferenceUtils;
+import main.java.com.conference.management.util.ConferenceUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

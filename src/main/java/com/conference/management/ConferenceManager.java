@@ -1,15 +1,14 @@
-package com.conference.management;
+package main.java.com.conference.management;
 
-import com.conference.management.bo.*;
-import com.conference.management.enums.DataOutputEnum;
-import com.conference.management.enums.DataSourceEnum;
-import com.conference.management.exceptions.UnsupportedDestinationException;
-import com.conference.management.exceptions.UnsupportedSourceException;
-import com.conference.management.io.ConferenceFileSourceManager;
-import com.conference.management.io.ConsoleOutputManager;
-import com.conference.management.util.ConferenceUtils;
+import main.java.com.conference.management.bo.*;
+import main.java.com.conference.management.enums.DataOutputEnum;
+import main.java.com.conference.management.enums.DataSourceEnum;
+import main.java.com.conference.management.exceptions.UnsupportedDestinationException;
+import main.java.com.conference.management.exceptions.UnsupportedSourceException;
+import main.java.com.conference.management.io.ConferenceFileSourceManager;
+import main.java.com.conference.management.io.ConsoleOutputManager;
+import main.java.com.conference.management.util.ConferenceUtils;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
