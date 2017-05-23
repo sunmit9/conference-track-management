@@ -27,7 +27,4 @@ public class Track {
         return trackId;
     }
 
-    public void setTrackId(int trackId) {
-        this.trackId = trackId;
-    }
 }

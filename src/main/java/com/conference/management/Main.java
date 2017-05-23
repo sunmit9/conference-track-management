@@ -8,7 +8,6 @@ import main.java.com.conference.management.exceptions.UnsupportedDestinationExce
 import main.java.com.conference.management.exceptions.UnsupportedSourceException;
 import main.java.com.conference.management.util.ConferenceUtils;
 
-import java.util.Collections;
 import java.util.List;
 
 /**

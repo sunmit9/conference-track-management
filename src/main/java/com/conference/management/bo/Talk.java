@@ -12,16 +12,8 @@ public class Talk {
         return durationInMinutes;
     }
 
-    public void setDurationInMinutes(int durationInMinutes) {
-        this.durationInMinutes = durationInMinutes;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public Talk(String title, int durationInMinutes)

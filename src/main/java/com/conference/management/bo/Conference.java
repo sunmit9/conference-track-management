@@ -1,8 +1,5 @@
 package main.java.com.conference.management.bo;
 
-import main.java.com.conference.management.ConferenceManagementConfig;
-
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**

@@ -21,23 +21,12 @@ public class Event {
         return startTime;
     }
 
-    public void setStartTime(Calendar startTime) {
-        this.startTime = startTime;
-    }
-
     public int getDurationInMinutes() {
         return durationInMinutes;
-    }
-
-    public void setDurationInMinutes(int durationInMinutes) {
-        this.durationInMinutes = durationInMinutes;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }
