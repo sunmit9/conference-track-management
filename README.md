@@ -25,7 +25,6 @@ Overdoing it in Python 45min
 Lua for the Masses 30min
 Ruby Errors from Mismatched Gem Versions 45min
 Common Ruby Errors 45min
-
 Rails for Python Developers lightning
 
 Communicating Over Distance 60min
