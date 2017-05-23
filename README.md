@@ -20,11 +20,17 @@ Note that depending on how you choose to complete this problem, your solution ma
  
 
 Test input:
+
 Writing Fast Tests Against Enterprise Rails 60min
+
 Overdoing it in Python 45min
+
 Lua for the Masses 30min
+
 Ruby Errors from Mismatched Gem Versions 45min
+
 Common Ruby Errors 45min
+
 Rails for Python Developers lightning
 
 Communicating Over Distance 60min
