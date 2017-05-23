@@ -12,14 +12,15 @@ import java.util.List;
  */
 public class ConferenceFileSourceManager {
 
-    public List<Talk> fetchTalks(){
+    public List<Talk> fetchTalks(String fileName) throws FileNotFoundException{
         FileInputStream fstream = null;
         List<Talk> talkList = new ArrayList<>();
 
         try {
-            fstream = new FileInputStream(ConferenceManagementConfig.TALKS_INPUT_FILE);
+            fstream = new FileInputStream(fileName);
         } catch (FileNotFoundException e) {
             System.err.println("Input file specified not found : " + ConferenceManagementConfig.TALKS_INPUT_FILE + ". Make sure the file exists");
+            throw e;
         }
         BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
@@ -40,7 +41,12 @@ public class ConferenceFileSourceManager {
                 if (ConferenceManagementConfig.LIGHTNING_TALK.equals(minutesString)) {
                     intMinutes = ConferenceManagementConfig.LIGHTNING_TALK_DURATION_MINUTES;
                 } else {
-                    intMinutes = Integer.parseInt(minutes);
+                    try {
+                        intMinutes = Integer.parseInt(minutes);
+                    } catch (NumberFormatException e) {
+                        System.err.println("Could not parse the line : " + strLine);
+                        throw e;
+                    }
                 }
                 Talk singleTalk = new Talk(title, intMinutes);
                 talkList.add(singleTalk);
@@ -57,5 +63,9 @@ public class ConferenceFileSourceManager {
             }
         }
         return talkList;
+    }
+
+    public List<Talk> fetchTalks() throws FileNotFoundException{
+        return fetchTalks(ConferenceManagementConfig.TALKS_INPUT_FILE);
     }
 }

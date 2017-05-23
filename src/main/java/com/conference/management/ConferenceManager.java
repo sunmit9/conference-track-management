@@ -9,6 +9,7 @@ import main.java.com.conference.management.io.ConferenceFileSourceManager;
 import main.java.com.conference.management.io.ConsoleOutputManager;
 import main.java.com.conference.management.util.ConferenceUtils;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
@@ -21,7 +22,12 @@ public class ConferenceManager {
         // Not exactly a factory. This will create an instance of the required SourceManager
         if (dataSourceEnum.equals(DataSourceEnum.FILE)) {
             ConferenceFileSourceManager sourceManager = new ConferenceFileSourceManager();
-            return sourceManager.fetchTalks();
+            try {
+                return sourceManager.fetchTalks();
+            } catch (FileNotFoundException e) {
+
+                return null;
+            }
         } else {
             throw new UnsupportedSourceException("Source type not valid");
         }

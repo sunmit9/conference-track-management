@@ -8,6 +8,7 @@ import main.java.com.conference.management.exceptions.UnsupportedDestinationExce
 import main.java.com.conference.management.exceptions.UnsupportedSourceException;
 import main.java.com.conference.management.util.ConferenceUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,6 +26,9 @@ public class Main {
         } catch (UnsupportedSourceException e){
             System.err.println(e.getMessage());
         }
+
+        if(talkList == null || talkList.size() == 0)
+            return;
 
         // Print talks.
         ConferenceUtils.printTalks(talkList);
