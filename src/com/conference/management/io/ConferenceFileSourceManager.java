@@ -26,17 +26,18 @@ public class ConferenceFileSourceManager {
         String strLine;
         int intMinutes;
 
-        //Read Input File Line By Line
+        // Read Input File Line By Line
         try {
             while ((strLine = br.readLine()) != null) {
-                // handle comments or empty lines
+                // handle comments or empty lines.
                 if(strLine.contains("//") || strLine.isEmpty())
                     continue;
 
                 String title = strLine.substring(0, strLine.lastIndexOf(" "));
                 String minutesString = strLine.substring(strLine.lastIndexOf(" ") + 1);
+                // get only the integers as string from the line.
                 String minutes = strLine.replaceAll("\\D+", "");
-                if ("lightning".equals(minutesString)) {
+                if (ConferenceManagementConfig.LIGHTNING_TALK.equals(minutesString)) {
                     intMinutes = ConferenceManagementConfig.LIGHTNING_TALK_DURATION_MINUTES;
                 } else {
                     intMinutes = Integer.parseInt(minutes);

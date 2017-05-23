@@ -42,50 +42,57 @@ public class ConferenceManager {
 
     public Conference processAndScheduleTalks(List<Talk> talkList){
         Conference conference = new Conference();
+
+        // sort all the talks in descending order
         Collections.sort(talkList, new TalksCompare());
         int trackCount = 0;
 
+        // run this loop till all the talks are scheduled.
         while (0 != talkList.size()) {
 
-            // fill morning slot
+            // create and fill morning slot.
             Slot morningSlot = new Slot(ConferenceManagementConfig.MORNING_SLOT_DURATION_MINUTES, ConferenceManagementConfig.TRACK_START_TIME);
             fillSlot(morningSlot, talkList);
 
-            // fill lunch slot
+            // create and fill lunch slot.
             Slot lunchSlot = new Slot(ConferenceManagementConfig.LUNCH_DURATION_MINUTES, ConferenceManagementConfig.LUNCH_START_TIME);
             lunchSlot.addEvent(new Lunch());
 
-            // fill afternoon slot
+            // create and fill afternoon slot.
             Slot afternoonSlot = new Slot(ConferenceManagementConfig.AFTERNOON_SLOT_DURATION_MINUTES,
                     ConferenceManagementConfig.POST_LUNCH_SLOT_START_TIME);
             fillSlot(afternoonSlot, talkList);
 
-            // fill networking slot
+            // create and fill networking slot.
             Slot networkingSlot = new Slot(ConferenceManagementConfig.NETWORKING_DURATION_MINUTES,
                     ConferenceManagementConfig.NETWORKING_START_TIME);
             networkingSlot.addEvent(new Networking());
 
+            // add all the slots for the day into the track.
             Track track = new Track(++trackCount);
             track.addSlot(morningSlot);
             track.addSlot(lunchSlot);
             track.addSlot(afternoonSlot);
             track.addSlot(networkingSlot);
+            // add track to the conference.
             conference.addTrack(track);
-
         }
 
         return conference;
     }
 
     private void fillSlot(Slot slot, List<Talk> talks) {
+        // initialize the slot start time.
         Calendar currentStartTime = slot.getStartTime();
-        for (Iterator<Talk> iter = talks.iterator(); iter.hasNext();) {
-            Talk talk = iter.next();
-
+        for (Iterator<Talk> talksIterator = talks.iterator(); talksIterator.hasNext();) {
+            Talk talk = talksIterator.next();
             if (slot.hasRoomFor(talk)) {
+                // add an event to the slot at the currentStartTime calculated.
                 slot.addEvent(new Event(currentStartTime, talk.getTitle(), talk.getDurationInMinutes()));
+                // calculate the next start time based on the current start time and current talk duration.
                 currentStartTime = ConferenceUtils.getNextStartTime(currentStartTime, talk);
-                iter.remove();
+                // remove the talk from the list. This means that the talk has been scheduled in the conference.
+                talksIterator.remove();
             }
         }
     }

@@ -22,10 +22,6 @@ public class Slot {
         this.remainingDuration -= event.getDurationInMinutes();
     }
 
-    public int getRemainingDuration() {
-        return remainingDuration;
-    }
-
     public Calendar getStartTime() {
         return startTime;
     }
@@ -36,6 +32,7 @@ public class Slot {
         this.startTime = startTime;
     }
 
+    // check if the talk can be accommodated in the current slot.
     public boolean hasRoomFor(Talk talk) {
         return remainingDuration >= talk.getDurationInMinutes();
     }

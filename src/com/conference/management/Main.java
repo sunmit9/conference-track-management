@@ -19,13 +19,14 @@ public class Main {
 
         ConferenceManager conferenceManager = new ConferenceManager();
         List<Talk> talkList = null;
+        // Fetch the input talk list.
         try {
             talkList = conferenceManager.fetchTalksListFromSource(DataSourceEnum.FILE);
         } catch (UnsupportedSourceException e){
             System.err.println(e.getMessage());
         }
 
-        // print talks from the input files.
+        // Print talks.
         ConferenceUtils.printTalks(talkList);
 
         // Process and schedule talks into events and slots.

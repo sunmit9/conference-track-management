@@ -12,6 +12,8 @@ public class ConferenceManagementConfig {
     public static final String TALKS_INPUT_FILE = "input-talks.txt";
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("hh:mm a");
 
+    public static final String LIGHTNING_TALK = "lightning";
+
     public static final int TOTAL_TRACK_DURATION_MINUTES = 420;
     public static final int MORNING_SLOT_DURATION_MINUTES = 180;
     public static final int AFTERNOON_SLOT_DURATION_MINUTES = 240;
